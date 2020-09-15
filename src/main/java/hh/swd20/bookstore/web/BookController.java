@@ -10,7 +10,7 @@ import hh.swd20.bookstore.domain.Book;
 public class BookController {
 
 	@GetMapping("/index")
-	public String getBooks(Model model) {
+	public String getBooks() {
 		return "index";
 	}
 }
