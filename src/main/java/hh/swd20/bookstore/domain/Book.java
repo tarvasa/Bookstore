@@ -1,5 +1,7 @@
 package hh.swd20.bookstore.domain;
 
+import java.text.DecimalFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +17,7 @@ public class Book {
 	private int year;
 	private int isbn;
 	private double price;
+	
 	
 	
 	public Book() {
