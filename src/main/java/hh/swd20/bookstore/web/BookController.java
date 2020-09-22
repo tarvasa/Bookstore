@@ -9,8 +9,8 @@ import hh.swd20.bookstore.domain.Book;
 @Controller
 public class BookController {
 
-	@GetMapping("/index")
+	@GetMapping("/booklist")
 	public String getBooks() {
-		return "index";
+		return "booklist";
 	}
 }
