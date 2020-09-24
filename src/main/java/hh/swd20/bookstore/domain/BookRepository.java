@@ -8,6 +8,5 @@ public interface BookRepository extends CrudRepository<Book, Long> {
 	
 	public List<Book> findByAuthor(String author);
 	
-	
 
 }
