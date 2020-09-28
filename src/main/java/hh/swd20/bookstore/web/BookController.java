@@ -20,7 +20,7 @@ public class BookController {
 	private BookRepository repository;
 	
 	//@Autowired
-	//private CategoryRepository categoryRepository;
+	private CategoryRepository categoryRepository;
 	
 	@GetMapping("/booklist")
 	public String getBooks(Model model) {
@@ -31,7 +31,7 @@ public class BookController {
 	@GetMapping("/addbook")
 	public String addBook(Model model) {
 		model.addAttribute("book", new Book());
-		//model.addAttribute("categories", categoryRepository.findAll());
+		model.addAttribute("categories", categoryRepository.findAll());
 		return "addbook";
 	}
 	
