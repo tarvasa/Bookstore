@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Create Category</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Create New Category</h1>
+		<div>
+			<form th:object="${category}" th:action="@{/savecategory}" action="#" method="post">
+				<label for="name">Category Name:</label><br>
+				<input type="text" id="name" th:field="${category.name}" /><br><br>
+				<input type="submit" value="Create"/>
+			</form>
+		</div>
+</body>
+</html>
