@@ -31,8 +31,8 @@ public class BookstoreApplication {
 			categoryRepository.save(category2);
 			categoryRepository.save(category3);
 			
-			Book book1 = new Book("Johanna Sinisalo", "Not Before Sundown", 2000, "1232323-21", 25.90);
-			Book book2 = new Book("Andrzej Sapkowski", "Lady Of the Lake", 2017, "22122343-5", 30.00 );
+			Book book1 = new Book("Johanna Sinisalo", "Not Before Sundown", 2000, "1232323-21", 25.90, category2);
+			Book book2 = new Book("Andrzej Sapkowski", "Lady Of the Lake", 2017, "22122343-5", 30.00 , category2);
 			bookRepository.save(book1);
 			bookRepository.save(book2);
 			
