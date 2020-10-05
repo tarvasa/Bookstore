@@ -19,13 +19,11 @@
 			<label for="price">Price:</label><br>
 			<input type="text" id="price" th:field="${book.price}" /><br>
 			
-			<div style="clear: both; display: block; height: 10px;"></div>						
-		  	<label for="categorylist">Category:</label>
-			 <select id="categorylist" th:field="*{category}" class="form-control">
-       			<option th:each="categ: ${categories}" th:value="${categ.categoryid}" th:text="${categ.name}"></option>
-    		</select>
+		  	 <label for="categorylist">Category:</label>
+			 <select id="categorylist" th:field="${book.category}" class="form-control">
+       			<option th:each="category: ${categories}" th:value="${category.categoryid}" th:text="${category.name}"></option> 
+    		 </select>
 			
-			<div style="clear: both; display: block; height: 10px;"></div>
 			<br>
 			<input type="submit" value="Add" />
 		</form>
