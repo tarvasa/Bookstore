@@ -25,7 +25,7 @@ public class BookController {
 	@Autowired
 	private BookRepository repository;
 	
-	//@Autowired
+	@Autowired
 	private CategoryRepository categoryRepository;
 	
 	@GetMapping("/booklist")
