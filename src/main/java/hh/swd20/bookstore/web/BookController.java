@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -44,6 +46,12 @@ public class BookController {
 	@RequestMapping(value="/books/{id}", method = RequestMethod.GET)
 	public @ResponseBody Optional<Book> findBookRest(@PathVariable("id") Long bookId) {
 		return repository.findById(bookId);
+	}
+	
+	//RESTful service to save new book
+	@RequestMapping(value="/books", method = RequestMethod.POST)
+	public @ResponseBody Book saveBookRest(@RequestBody Book book) {
+		return repository.save(book);
 	}
 	
 	@GetMapping("/addbook")
