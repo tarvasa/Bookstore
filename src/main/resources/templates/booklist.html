@@ -30,7 +30,7 @@
 			<th>Year</th>
 			<th>Price</th>
 			<th>Category</th>
-			<th sec:authorize="hasRole('ADMIN')"></th>
+			<th sec:authorize="hasAuthority('ADMIN')"></th><!--in-memory käyttäjien kanssa, sama rivillä 43 <th sec:authorize="hasRole('ADMIN')"></th>- -->
 		</tr>
 
 		<tr th:each="book : ${books}">
@@ -40,7 +40,7 @@
 			<td th:text="${book.year}"/>
 			<td th:text="${#numbers.formatDecimal(book.price, 0, 'COMMA', 2, 'POINT')}"/>
 			<td th:text="${book.category.name}"/>
-			<td sec:authorize="hasRole('ADMIN')"><a th:href="@{/delete/{id} (id=${book.id})}" class="btn btn-danger">Delete</a></td>
+			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id} (id=${book.id})}" class="btn btn-danger">Delete</a></td>
 			<td><a th:href="@{/edit/{id} (id=${book.id})}" class="btn btn-primary">Edit</a></td>
 		</tr>
 	</table>
