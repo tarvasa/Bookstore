@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import hh.swd20.bookstore.domain.User;
+import hh.swd20.bookstore.domain.UserRepository;
 import hh.swd20.bookstore.domain.BookRepository;
 import hh.swd20.bookstore.domain.Category;
 import hh.swd20.bookstore.domain.CategoryRepository;
@@ -21,7 +23,7 @@ public class BookstoreApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(BookRepository bookRepository, CategoryRepository categoryRepository) {
+	public CommandLineRunner demo(BookRepository bookRepository, CategoryRepository categoryRepository, UserRepository userrepository) {
 		return (args) -> {
 			log.info("save couple book");
 			Category category1 = new Category("scifi");
@@ -35,6 +37,12 @@ public class BookstoreApplication {
 			Book book2 = new Book("Andrzej Sapkowski", "Lady Of the Lake", 2017, "22122343-5", 30.00 , category2);
 			bookRepository.save(book1);
 			bookRepository.save(book2);
+			
+			// Create users: admin/admin user/user
+			User user1 = new User("user", "$2a$10$aeQ5vCHSjQ2ymCuu4TFJGewqL2VfCL/pKZ.Bkv3yAzIufOCPWpE0i", "exapmle@email.com", "USER");
+			User user2 = new User("admin", "$2a$10$c1o09nx6r2bjU0RfN913Ee/joYetGzdrAUwtO2yZvfNoB2IL8.JO2", "example2@email.com", "ADMIN");
+			userrepository.save(user1);
+			userrepository.save(user2);
 			
 			log.info("fetch all books");
 			for (Book book : bookRepository.findAll()) {
