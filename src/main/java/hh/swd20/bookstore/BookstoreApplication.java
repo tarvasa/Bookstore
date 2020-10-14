@@ -40,6 +40,12 @@ public class BookstoreApplication {
 			for (Book book : bookRepository.findAll()) {
 				log.info(book.toString());
 			}
+			
+			log.info("Fetch all categories");
+			for (Category category : categoryRepository.findAll()) {
+
+				log.info(category.toString());
+			}
 		};
 		
 	}
