@@ -1,7 +1,7 @@
 package hh.swd20.bookstore;
 
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.context.annotation.Bean;
@@ -30,7 +30,7 @@ public class WebSecuirytConfig extends WebSecurityConfigurerAdapter {
         .and()
       .formLogin()
           .loginPage("/login")
-          .defaultSuccessUrl("/booklist")
+          .defaultSuccessUrl("/booklist", true)
           .permitAll()
           .and()
       .logout()
