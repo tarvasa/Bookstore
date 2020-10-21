@@ -34,9 +34,8 @@ public class CategoryRepositoryTest {
 	}
 	@Test //testataan delete
 	public void deleteCategory() {
-		//List<Category> categories = (List<Categories>) repository.findAll();
 		List<Category> categories = (List<Category>) repository.findAll();
-		Long id = new Long(4);
+		Long id = new Long(1);
 		repository.deleteById(id);
 		assertThat(repository.findById(id)).isNotIn(categories);
 	}
