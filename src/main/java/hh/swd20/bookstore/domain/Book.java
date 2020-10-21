@@ -32,7 +32,7 @@ public class Book {
 		this.category = null;
 	}
 	
-	public Book(long id, String title, String author, int year, String isbn, double price, Category category) {
+	public Book(long id, String author, String title, int year, String isbn, double price, Category category) {
 		this.id = id;
 		this.title = title;
 		this.author = author;
@@ -42,7 +42,7 @@ public class Book {
 		this.category = category;
 	}
 	
-	public Book(String title, String author, int year, String isbn, double price, Category category) {
+	public Book(String author, String title, int year, String isbn, double price, Category category) {
 		this.title = title;
 		this.author = author;
 		this.year = year;
